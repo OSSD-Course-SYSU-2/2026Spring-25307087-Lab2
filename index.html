@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2563eb">
+  <title>Harmony Mart | Seamless Cross-Device Shopping</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="A next-generation e-commerce platform built with responsive design principles, showcasing state management, complex UI components, and mock HarmonyOS distributed features.">
+  <meta name="keywords" content="e-commerce, shopping, fresh food, harmonyos, distributed architecture, vanilla js">
+  <meta name="author" content="25307087">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Harmony Mart">
+  <meta property="og:description" content="Seamless Cross-Device Shopping Experience">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/themes/default.css">
+  <link rel="stylesheet" href="css/layouts/grid.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/sidebar.css">
+  <link rel="stylesheet" href="css/components/product.css">
+  <link rel="stylesheet" href="css/components/cart.css">
+  <link rel="stylesheet" href="css/components/ui.css">
+  <link rel="stylesheet" href="css/components/admin.css">
+  <link rel="stylesheet" href="css/components/profile.css">
+  <link rel="stylesheet" href="css/components/animations.css">
+  
+  <style>
+    /* Critical path CSS for loader */
+    #initial-loader {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #ffffff;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    #initial-loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .spinner {
+      width: 50px; height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #2563eb;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="theme-light">
+  
+  <!-- Initial App Loader -->
+  <div id="initial-loader">
+    <div class="spinner"></div>
+    <h2 style="margin-top: 20px; font-family: 'Inter', sans-serif; color: #1e293b;">Loading Harmony Mart...</h2>
+  </div>
+
+  <!-- Application Shell -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Header -->
+    <header id="header-root" class="app-header glass-effect"></header>
+    
+    <div class="main-layout">
+      <!-- Sidebar Navigation -->
+      <aside id="sidebar-root" class="app-sidebar hide-on-mobile"></aside>
+      
+      <!-- Main Content Area (Router View Root) -->
+      <main id="main-view-root" class="app-content">
+        <!-- Content will be dynamically injected by Router -->
+      </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="checkout-root"></div>
+    <div id="device-manager-root"></div>
+    <div id="product-detail-root"></div>
+    <div id="cart-root" class="cart-drawer-container"></div>
+    
+  </div>
+
+  <!-- Application Scripts (Type Module for ES6 Imports) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
